@@ -1,0 +1,17 @@
+[project]
+name = "fashion-webcrawler"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Suvrakamal Das",email = "jyb2084.usa@gmail.com"}
+]
+readme = "README.md"
+requires-python = "3.10"
+dependencies = [
+    "apify-client (>=1.12.0,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

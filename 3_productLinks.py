@@ -12,7 +12,7 @@ ACTOR_ID = "moJRLRc85AitArpNN"
 RUN_TIMEOUT_SECS = 120  # 2 minutes per run
 
 # Load URLs from JSON file
-with open("loadedUrls.json", "r") as f:
+with open("sample_responses/loadedUrls.json", "r") as f:
     urls = json.load(f)
 
 def run_apify_for_url(url):

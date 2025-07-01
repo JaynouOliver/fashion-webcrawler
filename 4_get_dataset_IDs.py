@@ -7,23 +7,10 @@ url = "https://api.apify.com/v2/acts/apify~web-scraper/runs?token=apify_api_8AfF
 
 response = requests.get(url)
 
-print(response.json())
+data = response.json()
 
-# save the response to a json file as ac
-with open('actors.json', 'w') as f:
-    json.dump(response.json(), f)
-
-
-# read the actors.json file
-try:
-    with open('actors.json', 'r') as f:
-        data = json.load(f)
-except FileNotFoundError:
-    print("Error: actors.json file not found")
-    exit(1)
-except json.JSONDecodeError:
-    print("Error: Invalid JSON format in actors.json")
-    exit(1)
+# print the data
+print(data)
 
 # extract all defaultDatasetId values using list comprehension
 dataset_ids = [item['defaultDatasetId'] 
@@ -37,8 +24,8 @@ for dataset_id in dataset_ids:
 
 # save dataset IDs to a new json file
 try:
-    with open('dataset_ids.json', 'w') as f:
+    with open('2.dataset_ids.json', 'w') as f:
         json.dump(dataset_ids, f, indent=4)
-    print("\nSuccessfully saved dataset IDs to dataset_ids.json")
+    print("\nSuccessfully saved dataset IDs to 2.dataset_ids.json")
 except IOError:
-    print("Error: Unable to write to dataset_ids.json")
+    print("Error: Unable to write to 2.dataset_ids.json")

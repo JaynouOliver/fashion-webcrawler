@@ -1,6 +1,11 @@
 import json 
 import requests
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+
+APIFY_TOKEN = os.getenv('APIFY_TOKEN')
 
 # get the list of dataset ids from dataset_ids.json
 with open('dataset_ids.json', 'r') as f:
@@ -15,7 +20,7 @@ all_data = []
 
 for x in dataset_ids:
     # Get data from each dataset ID
-    url = f"https://api.apify.com/v2/datasets/{x}/items?token=apify_api_8AfFZEsvs0fn84FKmi9rTQpxZDfspo0iJfEP"
+    url = f"https://api.apify.com/v2/datasets/{x}/items?token=APIFY_TOKEN"
     response = requests.get(url)
     data = response.json()
     

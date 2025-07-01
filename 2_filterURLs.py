@@ -13,7 +13,7 @@ with open('response.json', 'w') as f:
     json.dump(response.json(), f)
 
 
-#json struct us like this 
+#json struct is like this 
 # [
 #     {
 #         "url": "https://www.westside.com/",
